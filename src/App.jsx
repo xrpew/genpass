@@ -18,7 +18,6 @@ function App() {
   }
 
   const handleChange = ({target:{id, checked}})=>{
-    console.log({id,checked})
     if(checked) setType([...type, id])
     else{
       setType(type.filter(tp=>tp!==id))
@@ -27,7 +26,6 @@ function App() {
 
   const handleRange =( event )=>{
     setValue(event.target.value)
-    console.log(event.target.value)    
   }
 
 
@@ -50,11 +48,11 @@ function App() {
 
 
   return (
-    <>
+    <div style={{display:'flex', flexDirection:'column', placeItems:'center', gap:32}}>
     <h1>Generar contraseñaS</h1>
     <p>(copia con un click)</p>
     {
-      password ? <h1 onClick={ handleCopy } style={{color:'#419EC4', fontSize:'1em', marginBottom:'32px', maxWidth:'90vw'}}>{ password }</h1> : ''
+      password ? <h1 onClick={ handleCopy } style={{color:'#419EC4', fontSize:'1.1em', marginBottom:'32px', maxWidth:'90vw'}}>{ password }</h1> : ''
     }
     
     <form>
@@ -72,7 +70,7 @@ function App() {
     <br />
     <button onClick={ handleGenerator } > reintentar </button>
     </form>
-    </>
+    </div>
   )
 }
 
